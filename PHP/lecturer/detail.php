@@ -37,7 +37,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input value="<?php echo $row['name'] ?>" type="text" id="name" name="name" class="form-control" placeholder="Update name here">
+                <input type= "text" id="name" name="name" value="<?php echo $row['name']?>" disabled><br><br>
 			</td>
 		</tr>
 		<tr>
@@ -82,7 +82,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input  value="<?php echo $row['role'] ?>" type="text" id="role" name="role" class="form-control" placeholder="Update role here">
+                <input type= "text" id="role" name="role" value="<?php echo $row['role']?>" disabled><br><br>
 			</td>
 		</tr>
 		<tr>

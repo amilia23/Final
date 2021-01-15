@@ -33,7 +33,7 @@ if($result){
     
 
     //send it to the database---insert into
-    $result = mysqli_query($mysqli, "UPDATE lecturer SET name='$name', email='$email', password = '$password', subject = '$subject', phone='$phone', role = '$role'" " WHERE id='$login_session'");
+    $result = mysqli_query($mysqli, "UPDATE lecturer SET name='$name', email='$email', password = '$password', subject = '$subject', phone='$phone', role = '$role' WHERE id='$login_session'");
     if ($result) {
         echo 
         "<script>

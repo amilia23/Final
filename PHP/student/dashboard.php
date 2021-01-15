@@ -55,7 +55,7 @@ while ($row = mysqli_fetch_array($result)) {
           </a>
         </li>
         <li class="has-subnav">
-          <a href="#">
+          <a href="detail.php">
             <i class="fa fa-id-card fa-2x"></i>
             <span class="nav-text"> Student Details </span>
           </a>
@@ -67,7 +67,7 @@ while ($row = mysqli_fetch_array($result)) {
           </a>
         </li>
         <li class="has-subnav">
-          <a href="#">
+          <a href="listappointment.php">
             <i class="fa fa-calendar-check fa-2x"></i>
             <span class="nav-text"> View Appointments </span>
           </a>
