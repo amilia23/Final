@@ -28,13 +28,14 @@ if($result){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $subject = $_POST['subject'];
+    $subject1 = $_POST['subject1'];
+    $subject2 = $_POST['subject2'];
     $phone = $_POST['phone'];
     $role = $_POST['role'];
     
 
     //send it to the database---insert into
-    $sql = "UPDATE lecturer SET name='$name', email='$email', password = '$password', subject1 = '$subject', phone='$phone', role = '$role' WHERE id='$login_session'";
+    $sql = "UPDATE lecturer SET name='$name', email='$email', password = '$password', subject1 = '$subject1', subject2 = '$subject2', phone='$phone', role = '$role' WHERE id='$login_session'";
     $result = mysqli_query($mysqli, $sql);
     if ($result) {
         echo 

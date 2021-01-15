@@ -62,11 +62,20 @@ if($result){
 		</tr>
 		<tr>
 			<td>
-				<label for="subject">Subject</label>
+				<label for="subject">Subject 1</label>
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input  value="<?php echo $row['subject2'] ?>" type="text" id="subject" name="subject" class="form-control" placeholder="Update subject here">
+                <input  value="<?php echo $row['subject1'] ?>" type="text" id="subject1" name="subject1" class="form-control" placeholder="Update subject 1 here">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="subject">Subject 2</label>
+				</td>
+                <td width="2%">:</td>
+                <td>
+                <input  value="<?php echo $row['subject2'] ?>" type="text" id="subject2" name="subject2" class="form-control" placeholder="Update subject 2 here">
 			</td>
 		</tr>
 		<tr>
