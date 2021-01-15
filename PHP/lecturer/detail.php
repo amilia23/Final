@@ -1,4 +1,7 @@
-<?php include('dashboard.php'); ?>
+<?php 
+include_once("../config.php"); 
+include('dashboard.php'); 
+?>
 
 <head>
   <title>FSKIK Student Lecturer Appointment System</title>
@@ -10,8 +13,7 @@
 </head>
 
 <?php
-	$conn = new mysqli('localhost', 'root', '', 'final');
-	$result = $conn->query("SELECT * FROM lecturer") or die($conn->error());
+	$result = mysqli_query($mysqli, "SELECT * FROM lecturer");
 	?>
 
 <?php
@@ -37,7 +39,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input type= "text" id="name" name="name" value="<?php echo $row['name']?>" disabled><br><br>
+                <input type= "text" id="name" name="name" value="<?php echo $row['name']?>" readonly><br><br>
 			</td>
 		</tr>
 		<tr>
@@ -82,7 +84,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input type= "text" id="role" name="role" value="<?php echo $row['role']?>" disabled><br><br>
+                <input type= "text" id="role" name="role" value="<?php echo $row['role']?>" readonly><br><br>
 			</td>
 		</tr>
 		<tr>

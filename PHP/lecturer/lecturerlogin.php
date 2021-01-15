@@ -1,3 +1,42 @@
+<?php  
+include '../config.php';
+?>
+<?php session_start();  ?>
+<?php 
+
+    if(isset($_POST['submit'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $check = mysqli_query($mysqli, "SELECT * FROM lecturer WHERE email = '".$email."'AND password = '".$password."'");
+        $data = mysqli_fetch_array($check);
+        
+        $id= $data['id'];
+        $name_pelogin = $data['name'];
+        $role_pelogin = $data['role'];
+        $password_pelogin = $data['password'];
+        $email_pelogin = $data['email'];
+
+        if(mysqli_num_rows($check) > 0){
+
+            $_SESSION['name'] = $name_pelogin;
+            $_SESSION['role'] = $role_pelogin;
+            $_SESSION['id'] = $id;
+            
+            if($role_pelogin == 'lecturer'){
+                header('location:dashboard.php');
+            }
+            else{
+                echo  "<script type=\"text/javascript\">window.alert('Error: Wrong email or password'); window.location.href = 'lecturerlogin.php'; </script>";
+            }  
+        }
+        else{
+            echo  "<script type=\"text/javascript\">window.alert('Error: Wrong email or password'); window.location.href = 'lecturerlogin.php'; </script>";
+        }  
+         
+    }
+  
+?>
 <!DOCTYPE html>
 <html>
 
@@ -29,42 +68,3 @@
 </div>
 </body>
 </html>
-<?php session_start();  ?>
-<?php 
-
-    if(isset($_POST['submit'])){
-        include 'config.php';
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $check = mysqli_query($mysqli, "SELECT * FROM lecturer WHERE email = '".$email."'AND password = '".$password."'");
-        $data = mysqli_fetch_array($check);
-        
-        $id= $data['id'];
-        $name_pelogin = $data['name'];
-        $role_pelogin = $data['role'];
-        $password_pelogin = $data['password'];
-        $email_pelogin = $data['email'];
-
-        if(mysqli_num_rows($check) > 0){
-
-            session_start();
-
-            $_SESSION['name'] = $name_pelogin;
-            $_SESSION['role'] = $role_pelogin;
-            $_SESSION['id'] = $id;
-            
-            if($role_pelogin == 'lecturer'){
-                header('location:dashboard.php');
-            }
-            else{
-                echo  "<script type=\"text/javascript\">window.alert('Error: Wrong email or password'); window.location.href = 'lecturerlogin.php'; </script>";
-            }  
-        }
-    else{
-        echo  "<script type=\"text/javascript\">window.alert('Error: Wrong email or password'); window.location.href = 'lecturerlogin.php'; </script>";
-    }  
-         
-    }
-  
-?>

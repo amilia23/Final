@@ -1,5 +1,7 @@
-<?php include('dashboard.php'); ?>
-
+<?php 
+include_once("../config.php"); 
+include('dashboard.php'); 
+?>
 <head>
   <title>FSKIK Student Lecturer Appointment System</title>
   <link rel="stylesheet" href="../../CSS/bootstrap.min.css" />
@@ -10,8 +12,7 @@
 </head>
 
 <?php
-	$conn = new mysqli('localhost', 'root', '', 'final');
-	$result = $conn->query("SELECT * FROM lecturer") or die($conn->error());
+	$result = mysqli_query($mysqli, "SELECT * FROM lecturer") or die($conn->error());
 	?>
 
 <?php
@@ -24,7 +25,7 @@ if($result){
     }
 
         //receive input from the form
-    $name = $_POST ['name'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $subject = $_POST['subject'];
@@ -33,7 +34,8 @@ if($result){
     
 
     //send it to the database---insert into
-    $result = mysqli_query($mysqli, "UPDATE lecturer SET name='$name', email='$email', password = '$password', subject = '$subject', phone='$phone', role = '$role' WHERE id='$login_session'");
+    $sql = "UPDATE lecturer SET name='$name', email='$email', password = '$password', subject1 = '$subject', phone='$phone', role = '$role' WHERE id='$login_session'";
+    $result = mysqli_query($mysqli, $sql);
     if ($result) {
         echo 
         "<script>

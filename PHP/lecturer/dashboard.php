@@ -1,3 +1,7 @@
+<?php 
+include_once("../config.php"); 
+session_start();
+?>
 <html>
 <head>
   <title>FSKIK Student Lecturer Appointment System</title>
@@ -14,7 +18,6 @@
     <div class="area">
     <div class="main"><br>
     <?php 
-		session_start();
 		echo $_SESSION['name'];
 		?>
 		<br>You are login as
@@ -23,8 +26,6 @@
     ?><br><br>
   </body>
 <?php
-
-include_once("config.php");
 
 $result = mysqli_query($mysqli, "SELECT * FROM lecturer WHERE id= '".$_SESSION['id']."'");
 while ($row = mysqli_fetch_array($result)) {
@@ -72,7 +73,7 @@ while ($row = mysqli_fetch_array($result)) {
 
       <ul class="logout">
         <li>
-          <a href="../index.html">
+          <a href="../logout.php">
             <i class="fa fa-power-off fa-2x"></i>
             <span class="nav-text"> Logout </span>
           </a>
