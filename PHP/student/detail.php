@@ -1,78 +1,94 @@
+<?php include('dashboard.php'); ?>
+
+<head>
+  <title>FSKIK Student Lecturer Appointment System</title>
+  <link rel="stylesheet" href="../../CSS/bootstrap.min.css" />
+  <script
+    src="https://kit.fontawesome.com/9a81059403.js"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../../CSS/style.css" />
+</head>
+
+<?php
+	$conn = new mysqli('localhost', 'root', '', 'final');
+	$result = $conn->query("SELECT * FROM student") or die($conn->error());
+	?>
+
 <?php
 
-include('../config.php');
-session_start();
-
-$user_check = $_SESSION['login_user'];
-
-if (!isset($_SESSION['login_user'])){
-    header("location:../login.php");
-    die();
-
-}
-
-$result = mysqli_query($mysqli, "SELECT * FROM customers WHERE username = '$user_check'");
+	$result = mysqli_query($mysqli, "SELECT * FROM student WHERE id= '".$_SESSION['id']."'");
 if($result){
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
     if($row)
-        $login_session = $row['username'];
-
-
-$pp = 'default_profile.png';
-if ($row['photo']) {
-    $pp = $row['photo'];
-}
+        $login_session = $row['id'];
 ?>
 
+
 <html>
-<?php require('../../header.php'); ?>
-	<body>
-	<?php $icon = 'icon1'; require('../../sitebars/sitebarCustomer.php'); ?>
+
     <center>
-	<h1>Update your Profile Here</h1><br>
+	<h1>Lecture Detail</h1><br>
     <div style="margin-left: 250px;">
-		<form action = "insertData.php" method  = "POST" enctype = "multipart/form-data">  
+		<form action = "insertData.php" method  = "POST">  
 		<table class="table">
 		<tr>
-			<td width="25%">
-                <label for="photo">Upload Your Picture Here</label>
+			<td>
+				<label for="matric">Matric</label>
 				</td>
                 <td width="2%">:</td>
                 <td>
-				<img src="../../uploads/<?php echo $pp ?>" style="max-width: 100px; max-height: 100px;" /> <br />
-				<input type="file"  name="photo" id = "photo" size ="30">
+                <input  value="<?php echo $row['matric'] ?>" type="text" id="matric" name="matric" class="form-control" placeholder="Update no matric here">
 			</td>
 		</tr>
 		<tr>
 			<td>
-                <label for="first_name">First Name</label>
+                <label for="name">Name</label>
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input value="<?php echo $row['first_name'] ?>" type="text" id="first_name" name="first_name" class="form-control" placeholder="Update first name here">
+                <input value="<?php echo $row['name'] ?>" type="text" id="name" name="name" class="form-control" placeholder="Update name here">
 			</td>
 		</tr>
 		<tr>
 			<td><br>
-				<label for="phone">Phone No.</label>
-				</td>
-                <td width="2%">:</td>
-                <td>
-                <input value="<?php echo $row['phone'] ?>" type="text" id="phone" name="phone" class="form-control" placeholder="Update phone number here">
-			</td>
-		</tr>
-		<tr>
-			<td>
 				<label for="email">Email</label>
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input  value="<?php echo $row['email'] ?>" type="text" id="email" name="email" class="form-control" placeholder="Update email here">
+                <input value="<?php echo $row['email'] ?>" type="text" id="email" name="email" class="form-control" placeholder="Update email here">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="password">Password</label>
+				</td>
+                <td width="2%">:</td>
+                <td>
+                <input  value="<?php echo $row['password'] ?>" type="text" id="password" name="password" class="form-control" placeholder="Update password here">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<label for="phone">No Phone</label>
+				</td>
+                <td width="2%">:</td>
+                <td>
+                <input  value="<?php echo $row['phone'] ?>" type="text" id="password" name="phone" class="form-control" placeholder="Update no phone here">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="role">Role</label>
+				</td>
+                <td width="2%">:</td>
+                <td>
+                <input  value="<?php echo $row['role'] ?>" type="text" id="role" name="role" class="form-control" placeholder="Update role here">
 			</td>
 		</tr>
 		<tr>
 			<td colspan="3">
-			<button type = "submit" class = "btn btn-primary" name = "update">Submit</button>
+			<button type = "submit" class = "btn btn-primary" name = "update">Update</button>
 			</td>
 		</tr>
 		</table>
