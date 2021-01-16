@@ -3,14 +3,14 @@
 
 <head>
     <title>FSKIK Student Lecturer Appointment System</title>
-    <link rel="stylesheet" href="../../CSS/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../CSS/login.css" />
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/login.css" />
     <script src="https://code.jquery.com/jquery.js"></script>
   </head>
     
 <body>
  <div>
-      <img src="../../images/banner.png" alt="banner" width="100%" />
+      <img src="../images/banner.png" alt="banner" width="100%" />
     </div>
     <div class="container">
     <div class="box-login">
@@ -34,7 +34,7 @@
 <?php 
 
     if(isset($_POST['submit'])){
-        include 'config.php';
+        include '../config.php';
         $email = $_POST['email'];
         $password = $_POST['password'];
 

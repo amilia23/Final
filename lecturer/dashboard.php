@@ -10,8 +10,8 @@ session_start();
     src="https://kit.fontawesome.com/9a81059403.js"
     crossorigin="anonymous"
   ></script>
-  <link rel="stylesheet" href="../../CSS/dashboard.css" />
-  <link rel="stylesheet" href="../../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/dashboard.css" />
+  <link rel="stylesheet" href="../CSS/style.css" />
 </head>
 
 <body>

@@ -3,39 +3,16 @@
 
 <head>
     <title>FSKIK Student Lecturer Appointment System</title>
-    <link rel="stylesheet" href="../../CSS/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../CSS/login.css" />
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/login.css" />
     <script src="https://code.jquery.com/jquery.js"></script>
   </head>
-    
-<body>
-
- <div>
-      <img src="../../images/banner.png" alt="banner" width="100%" />
-    </div>
-    <div class="container">
-    <div class="box-login">
-        <div class="header-box">Admin Login</div>
-        <br><br>
-        <center>
-            <form action="" method="post">
-                Email :<br>
-                <input type="email" name="email" /><br>
-                Password :<br>
-                <input type="password" name="password" /><br><br>
-                <input type="submit" name="submit" value="Login" />
-            </form>
-        </center>
-    </div>
-</div>
-</body>
-</html>
-<?php session_start();  ?>
+  <?php session_start();  ?>
 
 <?php 
 
     if(isset($_POST['submit'])){
-        include 'config.php';
+        include '../config.php';
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -71,3 +48,25 @@
     }
   
 ?>
+<body>
+
+ <div>
+      <img src="../images/banner.png" alt="banner" width="100%" />
+    </div>
+    <div class="container">
+    <div class="box-login">
+        <div class="header-box">Admin Login</div>
+        <br><br>
+        <center>
+            <form action="" method="post">
+                Email :<br>
+                <input type="email" name="email" /><br>
+                Password :<br>
+                <input type="password" name="password" /><br><br>
+                <input type="submit" name="submit" value="Login" />
+            </form>
+        </center>
+    </div>
+</div>
+</body>
+</html>

@@ -2,12 +2,12 @@
 
 <head>
   <title>FSKIK Student Lecturer Appointment System</title>
-  <link rel="stylesheet" href="../../CSS/bootstrap.min.css" />
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
   <script
     src="https://kit.fontawesome.com/9a81059403.js"
     crossorigin="anonymous"
   ></script>
-  <link rel="stylesheet" href="../../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/style.css" />
 </head>
 
 <div class="main">
@@ -86,6 +86,7 @@
 				<?php endwhile; ?>
 			</table>
 		</div>
+	</div>
 <style>
 td { 
         text-overflow: ellipsis;

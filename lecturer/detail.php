@@ -5,11 +5,11 @@ include('dashboard.php');
 
 <head>
   <title>FSKIK Student Lecturer Appointment System</title>
-  <link rel="stylesheet" href="../../CSS/bootstrap.min.css" />
+  <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
   <script
     src="https://kit.fontawesome.com/9a81059403.js"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../../CSS/style.css" />
+  <link rel="stylesheet" href="../CSS/style.css" />
 </head>
 
 <?php
@@ -30,16 +30,17 @@ if($result){
 
     <center>
 	<h1>Lecture Detail</h1><br>
-    <div style="margin-left: 250px;">
+    <div style="margin-left:270px;">
 		<form action = "insertData.php" method  = "POST">  
 		<table class="table">
 		<tr>
 			<td>
+			<div width = "1px">
                 <label for="name">Name</label>
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input type= "text" id="name" name="name" value="<?php echo $row['name']?>" readonly><br><br>
+                <input type="text" id="name" name="name" size="50" value="<?php echo $row['name']?>" disabled><br><br>
 			</td>
 		</tr>
 		<tr>
@@ -48,7 +49,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input value="<?php echo $row['email'] ?>" type="text" id="email" name="email" class="form-control" placeholder="Update email here">
+                <input type="text" id="email" name="email" size="50" value="<?php echo $row['email']?>"><br><br>
 			</td>
 		</tr>
 		<tr>
@@ -57,7 +58,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input  value="<?php echo $row['password'] ?>" type="text" id="password" name="password" class="form-control" placeholder="Update password here">
+                <input type="text" id="password" name="password" size="50" value="<?php echo $row['password']?>"><br><br>
 			</td>
 		</tr>
 		<tr>
@@ -66,7 +67,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input  value="<?php echo $row['subject1'] ?>" type="text" id="subject1" name="subject1" class="form-control" placeholder="Update subject 1 here">
+                <input type="text" id="subject1" name="subject1" size="50" value="<?php echo $row['subject1']?>"><br><br>
 			</td>
 		</tr>
 		<tr>
@@ -75,7 +76,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input  value="<?php echo $row['subject2'] ?>" type="text" id="subject2" name="subject2" class="form-control" placeholder="Update subject 2 here">
+                <input type="text" id="subject2" name="subject2" size="50" value="<?php echo $row['subject2']?>"><br><br>
 			</td>
 		</tr>
 		<tr>
@@ -84,16 +85,7 @@ if($result){
 				</td>
                 <td width="2%">:</td>
                 <td>
-                <input  value="<?php echo $row['phone'] ?>" type="text" id="password" name="phone" class="form-control" placeholder="Update no phone here">
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<label for="role">Role</label>
-				</td>
-                <td width="2%">:</td>
-                <td>
-                <input type= "text" id="role" name="role" value="<?php echo $row['role']?>" readonly><br><br>
+                <input type="text" id="phone" name="phone" size="50" value="<?php echo $row['phone']?>"><br><br>
 			</td>
 		</tr>
 		<tr>

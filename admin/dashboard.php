@@ -28,7 +28,7 @@
     ?><br><br>
 
 <?php
-include_once("config.php");
+include_once("../config.php");
 
 $result = mysqli_query($mysqli, "SELECT * FROM admin WHERE id= '".$_SESSION['id']."'");
 while ($row = mysqli_fetch_array($result)) {
